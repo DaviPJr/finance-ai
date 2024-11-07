@@ -1,13 +1,9 @@
-const  Home = () => {
-
-  return ( <div className="flex items-center justify-center w-screen">
-              <h1 className="text-red-500 p-5">Hello, World!</h1>
-           </div>
-  
-)
-
+const Home = () => {
+  return (
+    <div className="flex w-screen items-center justify-center">
+      <h1 className="p-5 text-red-500">Hello, World!</h1>
+    </div>
+  );
 };
 
 export default Home;
-
-  
