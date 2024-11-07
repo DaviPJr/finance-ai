@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-export const Subscription = () => {
-  return (
-    <div>page</div>
-  )
-}
+export const SubscriptionPage = () => {
+  return <div>page</div>;
+};
 
-export default Subscription;
+export default SubscriptionPage;
