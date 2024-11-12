@@ -27,6 +27,7 @@ export const upsertTransaction = async (params: UpsertTransactionParams) => {
     throw new Error("Unauthorized!");
   }
 
+  // método .upsert() utilizado tanto para CREATE quanto UPDATE
   await db.transaction.upsert({
     update: { ...params, userId },
     create: { ...params, userId },
