@@ -4,10 +4,21 @@ import { DataTable } from "../_components/ui/data-table";
 import { transactionColumns } from "./_columns";
 import AddTransactionButton from "../_components/add-transaction-button";
 import { Navbar } from "../_components/navbar";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 export const TransactionsPage = async () => {
+  const { userId } = await auth();
+  if (!userId) {
+    return redirect("/login");
+  }
   // acessar as transações do DB
-  const transactions = await db.transaction.findMany({});
+  const transactions = await db.transaction.findMany({
+    // mostra somente as transações do user logado
+    where: {
+      userId,
+    },
+  });
 
   return (
     <>
