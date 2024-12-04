@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 import { ScrollArea } from "../_components/ui/scroll-area";
 import { canUserAddTransaction } from "../_data/can-user-add-transaction";
 
-export const TransactionsPage = async () => {
+const TransactionsPage = async () => {
   const { userId } = await auth();
   if (!userId) {
     return redirect("/login");

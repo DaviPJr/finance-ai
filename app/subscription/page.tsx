@@ -7,7 +7,7 @@ import AcquirePlanButoon from "./_components/acquire-plan-button";
 import { Badge } from "@/app/_components/ui/badge";
 import { getCurrentMonthTransactions } from "../_data/get-current-month";
 
-export const SubscriptionPage = async () => {
+const SubscriptionPage = async () => {
   const { userId } = await auth();
   if (!userId) {
     return redirect("/login");
